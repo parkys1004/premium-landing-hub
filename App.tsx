@@ -40,25 +40,25 @@ const App = () => {
       <header 
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled 
-            ? 'bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 py-3' 
-            : 'bg-transparent py-6'
+            ? 'bg-white/95 dark:bg-slate-950/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 py-3' 
+            : 'bg-transparent py-5 sm:py-6'
         }`}
       >
-        <div className="max-w-5xl mx-auto px-6 flex justify-between items-center">
+        <div className="max-w-5xl mx-auto px-5 sm:px-6 flex justify-between items-center">
           <div className="flex items-center gap-3">
             <motion.div 
               initial={{ rotate: -10, opacity: 0 }}
               animate={{ rotate: 0, opacity: 1 }}
               transition={{ duration: 0.5 }}
-              className="bg-gradient-to-br from-indigo-500 to-violet-600 p-2.5 rounded-xl shadow-lg shadow-indigo-500/20"
+              className="bg-gradient-to-br from-indigo-500 to-violet-600 p-2 sm:p-2.5 rounded-xl shadow-lg shadow-indigo-500/20"
             >
-              <Layout size={24} className="text-white" />
+              <Layout size={20} className="text-white sm:w-6 sm:h-6" />
             </motion.div>
             <motion.h1 
               initial={{ x: -20, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ delay: 0.2 }}
-              className="text-xl font-bold tracking-tight text-slate-900 dark:text-white"
+              className="text-lg sm:text-xl font-bold tracking-tight text-slate-900 dark:text-white"
             >
               Premium Landing <span className="text-indigo-600 dark:text-indigo-400">Hub</span>
             </motion.h1>
@@ -70,17 +70,17 @@ const App = () => {
               animate={{ opacity: 1, scale: 1 }}
               whileTap={{ scale: 0.9 }}
               onClick={() => setIsDark(!isDark)}
-              className="p-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+              className="p-2.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
               aria-label="Toggle Dark Mode"
             >
               <AnimatePresence mode="wait">
                 {isDark ? (
                   <motion.div key="moon" initial={{ rotate: -90 }} animate={{ rotate: 0 }} exit={{ rotate: 90 }}>
-                    <Moon size={18} />
+                    <Moon size={20} />
                   </motion.div>
                 ) : (
                   <motion.div key="sun" initial={{ rotate: 90 }} animate={{ rotate: 0 }} exit={{ rotate: -90 }}>
-                    <Sun size={18} />
+                    <Sun size={20} />
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -100,25 +100,25 @@ const App = () => {
       </header>
 
       {/* Main Content */}
-      <main className="relative z-10 max-w-5xl mx-auto px-6 pt-36 pb-24 space-y-28">
+      <main className="relative z-10 max-w-5xl mx-auto px-5 sm:px-6 pt-32 sm:pt-40 pb-20 space-y-24 sm:space-y-32">
         
         {/* Intro Section */}
-        <section className="text-center space-y-8 mb-20">
+        <section className="text-center space-y-6 sm:space-y-8 mb-12 sm:mb-20">
           <motion.h2 
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.7 }}
-            className="text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-slate-900 via-slate-700 to-slate-500 dark:from-white dark:via-slate-200 dark:to-slate-400 leading-tight"
+            className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-slate-900 via-slate-700 to-slate-500 dark:from-white dark:via-slate-200 dark:to-slate-400 leading-[1.2] tracking-tight break-keep"
           >
-            제작 가이드 및<br className="md:hidden"/> 자료 요청
+            제작 가이드 및<br className="sm:hidden"/> 자료 요청
           </motion.h2>
           <motion.p 
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.7 }}
-            className="text-xl md:text-2xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed"
+            className="text-lg sm:text-xl md:text-2xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed break-keep"
           >
-            성공적인 프로젝트를 위한 첫 걸음.<br/>
+            성공적인 프로젝트를 위한 첫 걸음.<br className="hidden sm:block"/>
             필요한 정보를 입력하고, 안전하게 서버를 연동하세요.
           </motion.p>
         </section>
