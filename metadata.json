@@ -1,0 +1,5 @@
+{
+  "name": "Premium Landing Request",
+  "description": "A premium, animated dashboard for requesting landing page materials and guiding Vercel setup.",
+  "requestFramePermissions": []
+}
