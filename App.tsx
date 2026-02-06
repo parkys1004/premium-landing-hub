@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Layout, Check, Sparkles, Sun, Moon } from 'lucide-react';
+import { Layout, Check, Sparkles, Sun, Moon, ArrowUp } from 'lucide-react';
 import { BackgroundBeams } from './components/BackgroundBeams';
 import { RequestForm } from './components/RequestForm';
 import { VercelGuide } from './components/VercelGuide';
@@ -8,11 +8,13 @@ import { SecurityNotice } from './components/SecurityNotice';
 
 const App = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [showTopBtn, setShowTopBtn] = useState(false);
   const [isDark, setIsDark] = useState(false); // Default to Light Mode
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
+      setShowTopBtn(window.scrollY > 400);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -26,6 +28,13 @@ const App = () => {
       document.documentElement.classList.remove('dark');
     }
   }, [isDark]);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
 
   return (
     <div className={`relative min-h-screen transition-colors duration-300 selection:bg-indigo-500 selection:text-white 
@@ -133,6 +142,25 @@ const App = () => {
         <SecurityNotice />
 
       </main>
+
+      {/* Scroll To Top Button */}
+      <AnimatePresence>
+        {showTopBtn && (
+          <motion.button
+            initial={{ opacity: 0, scale: 0.8, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.8, y: 20 }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={scrollToTop}
+            className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-50 p-3 sm:p-4 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 shadow-xl shadow-slate-900/20 dark:shadow-white/20 border border-slate-700 dark:border-slate-200 backdrop-blur-sm flex items-center justify-center group"
+            aria-label="맨 위로 스크롤"
+          >
+            <ArrowUp size={24} className="group-hover:-translate-y-1 transition-transform duration-300" />
+            <span className="sr-only">맨 위로</span>
+          </motion.button>
+        )}
+      </AnimatePresence>
 
       {/* Footer */}
       <footer className="relative z-10 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 py-12 transition-colors duration-300">
