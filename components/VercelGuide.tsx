@@ -6,31 +6,31 @@ export const VercelGuide = () => {
   return (
     <section className="relative">
        {/* Decorative Label */}
-       <div className="flex items-center gap-2 mb-6">
+       <div className="flex items-center gap-2 mb-8">
         <div className="h-px flex-1 bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-700 to-transparent"></div>
-        <span className="text-sm font-bold text-slate-500 uppercase tracking-wider">Step 02</span>
+        <span className="text-base font-bold text-slate-500 uppercase tracking-wider">Step 02</span>
         <div className="h-px flex-1 bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-700 to-transparent"></div>
       </div>
 
-      <div className="flex flex-col items-center text-center space-y-4 mb-12">
+      <div className="flex flex-col items-center text-center space-y-6 mb-16">
         <motion.div 
           initial={{ rotate: -10, scale: 0 }}
           whileInView={{ rotate: 3, scale: 1 }}
           transition={{ type: "spring", stiffness: 200, delay: 0.1 }}
-          className="w-20 h-20 bg-gradient-to-br from-white to-slate-100 dark:from-slate-800 dark:to-black rounded-2xl flex items-center justify-center text-slate-800 dark:text-white shadow-2xl shadow-indigo-500/10 border border-slate-200 dark:border-slate-700 relative group"
+          className="w-24 h-24 bg-gradient-to-br from-white to-slate-100 dark:from-slate-800 dark:to-black rounded-3xl flex items-center justify-center text-slate-800 dark:text-white shadow-2xl shadow-indigo-500/10 border border-slate-200 dark:border-slate-700 relative group"
         >
           <div className="absolute inset-0 bg-indigo-500/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
-          <Server size={40} className="relative z-10" />
+          <Server size={48} className="relative z-10" />
         </motion.div>
-        <h2 className="text-3xl font-bold text-slate-900 dark:text-white">Vercel 계정 생성 및 이전</h2>
-        <p className="text-slate-600 dark:text-slate-400 max-w-lg">
+        <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white">Vercel 계정 생성 및 이전</h2>
+        <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed">
           안정적인 서비스 운영을 위해 전 세계적으로 가장 인기 있는 호스팅 서비스인 Vercel을 사용합니다.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         <StepCard 
-          icon={<UserPlus size={24} />}
+          icon={<UserPlus size={28} />}
           step="01"
           title="Vercel 가입"
           desc="가급적 업무용 또는 개인 이메일을 사용하여 가입해 주세요."
@@ -39,22 +39,22 @@ export const VercelGuide = () => {
               href="https://vercel.com/signup" 
               target="_blank" 
               rel="noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-bold text-indigo-600 dark:text-indigo-400 hover:text-indigo-500 dark:hover:text-indigo-300 transition-colors"
+              className="inline-flex items-center gap-2 text-base font-bold text-indigo-600 dark:text-indigo-400 hover:text-indigo-500 dark:hover:text-indigo-300 transition-colors mt-2"
             >
-              Vercel 가입하기 <ExternalLink size={14} />
+              Vercel 가입하기 <ExternalLink size={16} />
             </a>
           }
           delay={0.2}
         />
         <StepCard 
-          icon={<ShieldCheck size={24} />}
+          icon={<ShieldCheck size={28} />}
           step="02"
           title="플랜 선택"
           desc={<>플랜 유형에서 <strong className="text-slate-900 dark:text-white">"개인 프로젝트(Hobby)"</strong>를 선택해 주세요.<br/>(무료 이용 가능)</>}
           delay={0.4}
         />
         <StepCard 
-          icon={<Info size={24} />}
+          icon={<Info size={28} />}
           step="03"
           title="정보 공유"
           desc={<>가입하신 <strong className="text-slate-900 dark:text-white">이메일 주소와 비밀번호</strong>를<br/>저에게 알려주세요.</>}
@@ -73,21 +73,21 @@ const StepCard = ({ icon, step, title, desc, action, delay }: any) => {
       viewport={{ once: true }}
       transition={{ delay, duration: 0.6 }}
       whileHover={{ y: -5 }}
-      className="relative bg-white/70 dark:bg-slate-900/60 backdrop-blur-sm border border-slate-200 dark:border-slate-800 p-8 rounded-2xl overflow-hidden group shadow-lg shadow-slate-200/50 dark:shadow-none"
+      className="relative bg-white/70 dark:bg-slate-900/60 backdrop-blur-sm border border-slate-200 dark:border-slate-800 p-8 rounded-3xl overflow-hidden group shadow-lg shadow-slate-200/50 dark:shadow-none"
     >
       {/* Background Gradient on Hover */}
       <div className="absolute inset-0 bg-gradient-to-b from-indigo-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-      <div className="relative z-10">
+      <div className="relative z-10 flex flex-col h-full">
         <div className="flex justify-between items-start mb-6">
-          <div className="p-3 bg-slate-100 dark:bg-slate-800 rounded-xl text-indigo-600 dark:text-indigo-400 group-hover:text-white group-hover:bg-indigo-600 transition-colors duration-300 shadow-sm">
+          <div className="p-4 bg-slate-100 dark:bg-slate-800 rounded-2xl text-indigo-600 dark:text-indigo-400 group-hover:text-white group-hover:bg-indigo-600 transition-colors duration-300 shadow-sm">
             {icon}
           </div>
-          <span className="text-5xl font-black text-slate-100 dark:text-slate-800 group-hover:text-slate-200 dark:group-hover:text-slate-800/50 transition-colors select-none">{step}</span>
+          <span className="text-6xl font-black text-slate-100 dark:text-slate-800 group-hover:text-slate-200 dark:group-hover:text-slate-800/50 transition-colors select-none">{step}</span>
         </div>
         
-        <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4">{title}</h3>
-        <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+        <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">{title}</h3>
+        <p className="text-slate-600 dark:text-slate-400 text-base md:text-lg leading-relaxed mb-4 flex-grow">
           {desc}
         </p>
         {action}

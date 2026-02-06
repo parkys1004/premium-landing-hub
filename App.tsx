@@ -100,15 +100,15 @@ const App = () => {
       </header>
 
       {/* Main Content */}
-      <main className="relative z-10 max-w-5xl mx-auto px-6 pt-32 pb-24 space-y-24">
+      <main className="relative z-10 max-w-5xl mx-auto px-6 pt-36 pb-24 space-y-28">
         
         {/* Intro Section */}
-        <section className="text-center space-y-6 mb-16">
+        <section className="text-center space-y-8 mb-20">
           <motion.h2 
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.7 }}
-            className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-slate-900 via-slate-700 to-slate-500 dark:from-white dark:via-slate-200 dark:to-slate-400"
+            className="text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-slate-900 via-slate-700 to-slate-500 dark:from-white dark:via-slate-200 dark:to-slate-400 leading-tight"
           >
             제작 가이드 및<br className="md:hidden"/> 자료 요청
           </motion.h2>
@@ -116,7 +116,7 @@ const App = () => {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.7 }}
-            className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed"
+            className="text-xl md:text-2xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed"
           >
             성공적인 프로젝트를 위한 첫 걸음.<br/>
             필요한 정보를 입력하고, 안전하게 서버를 연동하세요.
@@ -137,11 +137,11 @@ const App = () => {
       {/* Footer */}
       <footer className="relative z-10 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 py-12 transition-colors duration-300">
         <div className="max-w-5xl mx-auto px-6 flex flex-col items-center justify-center gap-4 text-center">
-          <div className="flex items-center gap-2 text-slate-500 text-sm">
-            <Layout size={16} />
+          <div className="flex items-center gap-2 text-slate-500 text-base">
+            <Layout size={18} />
             <span className="font-semibold">Premium Landing Page Service</span>
           </div>
-          <p className="text-slate-500 dark:text-slate-600 text-xs">
+          <p className="text-slate-500 dark:text-slate-600 text-sm">
             © 2026 All Rights Reserved. Client Data Protected.
           </p>
         </div>
