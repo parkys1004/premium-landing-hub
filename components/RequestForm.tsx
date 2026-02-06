@@ -17,6 +17,9 @@ const requestFormText = `[크몽 발송용] 랜딩페이지 제작 자료 요청
 답변: 
 
 5. 이미지 및 로고 파일
+답변: 
+
+6. 포스터 및 홍보 이미지 (선택사항)
 답변: `;
 
 const formItems = [
@@ -83,13 +86,13 @@ export const RequestForm = () => {
               <div>
                 <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white leading-tight">자료 요청서</h3>
                 <p className="text-slate-500 dark:text-slate-400 text-base sm:text-lg mt-2 leading-snug break-keep">
-                  퀄리티 있는 결과물을 위해 <span className="text-indigo-600 dark:text-indigo-400 font-semibold">5가지 필수 항목</span>을 작성해 주세요.
+                  퀄리티 있는 결과물을 위해 <span className="text-indigo-600 dark:text-indigo-400 font-semibold">6가지 필수 항목</span>을 작성해 주세요.
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 mb-6">
             {formItems.map((item, idx) => (
               <motion.div
                 key={idx}
@@ -109,19 +112,37 @@ export const RequestForm = () => {
             ))}
           </div>
 
-          <motion.div 
-             initial={{ opacity: 0, scale: 0.95 }}
-             whileInView={{ opacity: 1, scale: 1 }}
-             viewport={{ once: true }}
-             transition={{ delay: 0.4 }}
-             className="p-5 sm:p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700/50 mb-10 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
-          >
-             <div className="w-10 h-1.5 mb-3 sm:mb-4 rounded-full bg-gradient-to-r from-gray-400 to-slate-600 opacity-70"></div>
-             <h4 className="font-bold text-slate-900 dark:text-slate-200 text-lg sm:text-xl mb-2">5. 이미지 및 로고 파일</h4>
-             <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed break-keep">
-               이미지가 없으신가요? 분위기에 맞는 <span className="text-slate-900 dark:text-white font-medium">'고화질 무료 이미지'</span>를 제가 직접 선정해 드립니다.
-             </p>
-          </motion.div>
+          <div className="grid grid-cols-1 gap-6 mb-10">
+            {/* Item 5 */}
+            <motion.div 
+               initial={{ opacity: 0, scale: 0.95 }}
+               whileInView={{ opacity: 1, scale: 1 }}
+               viewport={{ once: true }}
+               transition={{ delay: 0.4 }}
+               className="p-5 sm:p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700/50 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+            >
+               <div className="w-10 h-1.5 mb-3 sm:mb-4 rounded-full bg-gradient-to-r from-gray-400 to-slate-600 opacity-70"></div>
+               <h4 className="font-bold text-slate-900 dark:text-slate-200 text-lg sm:text-xl mb-2">5. 이미지 및 로고 파일</h4>
+               <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed break-keep">
+                 이미지가 없으신가요? 분위기에 맞는 <span className="text-slate-900 dark:text-white font-medium">'고화질 무료 이미지'</span>를 제가 직접 선정해 드립니다.
+               </p>
+            </motion.div>
+
+            {/* Item 6 */}
+            <motion.div 
+               initial={{ opacity: 0, scale: 0.95 }}
+               whileInView={{ opacity: 1, scale: 1 }}
+               viewport={{ once: true }}
+               transition={{ delay: 0.5 }}
+               className="p-5 sm:p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700/50 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+            >
+               <div className="w-10 h-1.5 mb-3 sm:mb-4 rounded-full bg-gradient-to-r from-pink-500 to-rose-500 opacity-70"></div>
+               <h4 className="font-bold text-slate-900 dark:text-slate-200 text-lg sm:text-xl mb-2">6. 포스터 및 홍보 이미지</h4>
+               <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed break-keep">
+                 모든 내용이 담긴 <span className="text-slate-900 dark:text-white font-medium">포스터 및 홍보 이미지</span>를 보내주셔도 됩니다.
+               </p>
+            </motion.div>
+          </div>
 
           <motion.button 
             whileHover={{ scale: 1.02 }}
