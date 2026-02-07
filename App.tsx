@@ -164,14 +164,33 @@ const App = () => {
 
       {/* Footer */}
       <footer className="relative z-10 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 py-12 transition-colors duration-300">
-        <div className="max-w-5xl mx-auto px-6 flex flex-col items-center justify-center gap-4 text-center">
-          <div className="flex items-center gap-2 text-slate-500 text-base">
-            <Layout size={18} />
-            <span className="font-semibold">Premium Landing Page Service</span>
+        <div className="max-w-5xl mx-auto px-6 flex flex-col items-center justify-center gap-8 text-center">
+          
+          <div className="space-y-1">
+            <div className="flex items-center justify-center gap-2 text-slate-500 text-base">
+              <Layout size={18} />
+              <span className="font-semibold">Premium Landing Page Service</span>
+            </div>
+            <p className="text-slate-500 dark:text-slate-600 text-sm">
+              © 2026 All Rights Reserved. Client Data Protected.
+            </p>
           </div>
-          <p className="text-slate-500 dark:text-slate-600 text-sm">
-            © 2026 All Rights Reserved. Client Data Protected.
-          </p>
+
+          {/* Producer Credit */}
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-col items-center justify-center pt-8 border-t border-slate-100 dark:border-slate-800/60 w-full max-w-[240px]"
+          >
+            <span className="text-[10px] font-bold text-slate-400 dark:text-slate-600 uppercase tracking-[0.2em] mb-2">
+              Produced by
+            </span>
+            <span className="text-2xl font-black italic tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600 dark:from-indigo-400 dark:to-violet-400 hover:scale-105 transition-transform cursor-default">
+              5bartv
+            </span>
+          </motion.div>
+
         </div>
       </footer>
     </div>
