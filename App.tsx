@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Layout, Check, Sparkles, Sun, Moon, ArrowUp } from 'lucide-react';
 import { BackgroundBeams } from './components/BackgroundBeams';
 import { RequestForm } from './components/RequestForm';
-import { VercelGuide } from './components/VercelGuide';
+import { CloudflareGuide } from './components/VercelGuide';
 import { SecurityNotice } from './components/SecurityNotice';
 
 const App = () => {
@@ -135,8 +135,8 @@ const App = () => {
         {/* Section 1: Data Request Form */}
         <RequestForm />
 
-        {/* Section 2: Vercel Guide */}
-        <VercelGuide />
+        {/* Section 2: Cloudflare Guide */}
+        <CloudflareGuide />
 
         {/* Section 3: Security Notice */}
         <SecurityNotice />

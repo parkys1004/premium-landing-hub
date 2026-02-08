@@ -35,7 +35,7 @@ export const SecurityNotice = () => {
               <NoticeItem 
                 icon={<CheckCircle2 className="text-slate-400 w-6 h-6" />}
                 title="왜 계정 정보가 필요한가요?"
-                text="Vercel 무료 플랜은 '팀 초대' 기능이 제한됩니다. 의뢰인님의 계정에 접속하여 배포 설정을 직접 마무리해야 독립적인 운영 환경이 구축됩니다."
+                text="Cloudflare의 강력한 보안 설정 및 도메인 연동을 위해 계정 접속이 필요합니다. 직접 배포 설정을 마무리해야 독립적인 운영 환경이 구축됩니다."
               />
               <NoticeItem 
                 icon={<Lock className="text-emerald-500 dark:text-emerald-400 w-6 h-6" />}
