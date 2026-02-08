@@ -4,7 +4,6 @@ import { Layout, Check, Sparkles, Sun, Moon, ArrowUp } from 'lucide-react';
 import { BackgroundBeams } from './components/BackgroundBeams';
 import { RequestForm } from './components/RequestForm';
 import { CloudflareGuide } from './components/VercelGuide';
-import { SecurityNotice } from './components/SecurityNotice';
 
 const App = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -137,9 +136,6 @@ const App = () => {
 
         {/* Section 2: Cloudflare Guide */}
         <CloudflareGuide />
-
-        {/* Section 3: Security Notice */}
-        <SecurityNotice />
 
       </main>
 
